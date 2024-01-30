@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erijania <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:28:43 by erijania          #+#    #+#             */
-/*   Updated: 2024/01/26 18:28:45 by erijania         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:34:50 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
 void	ft_putstr(char *str)
 {
 	int	i;

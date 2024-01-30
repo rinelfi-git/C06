@@ -3,44 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erijania <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:29:57 by erijania          #+#    #+#             */
-/*   Updated: 2024/01/26 18:29:58 by erijania         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:55:09 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	src_i;
-
-	src_i = -1;
-	while (src[++src_i])
-		dest[src_i] = src[src_i];
-	dest[src_i] = '\0';
-	return (dest);
+	while (*s1 && *s2 && *s1 - *s2 == 0)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
 void	ft_reorder(char **args, int size)
 {
 	int		i;
-	char	temp[100];
+	char	*temp;
 	int		permute;
 
 	permute = 1;
 	while (permute)
 	{
+		permute = 0;
 		i = 1;
 		while (i < size - 1)
 		{
-			permute = 0;
-			if (args[i][0] - args[i + 1][0] > 0)
+			if (ft_strcmp(args[i], args[i + 1]) > 0)
 			{
-				ft_strcpy(temp, args[i]);
-				ft_strcpy(args[i], args[i + 1]);
-				ft_strcpy(args[i + 1], temp);
+				temp = args[i];
+				args[i] = args[i + 1];
+				args[i + 1] = temp;
 				permute = 1;
 			}
 			i++;
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 	i = 1;
 	ft_reorder(argv, argc);
-	while (i < argc - 1)
+	while (i < argc)
 	{
 		ft_putstr(argv[i]);
 		ft_putstr("\n");
