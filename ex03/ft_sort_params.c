@@ -6,7 +6,7 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:29:57 by erijania          #+#    #+#             */
-/*   Updated: 2024/01/30 18:55:09 by erijania         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:32:45 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_putstr(char *str)
 		write(1, str + i, 1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	i;
 
@@ -69,5 +69,5 @@ int main(int argc, char *argv[])
 		ft_putstr("\n");
 		i++;
 	}
-	return 0;
+	return (0);
 }
