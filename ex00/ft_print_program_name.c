@@ -6,11 +6,12 @@
 /*   By: erijania <erijania@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:28:43 by erijania          #+#    #+#             */
-/*   Updated: 2024/01/30 18:34:50 by erijania         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:30:51 by erijania         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 void	ft_putstr(char *str)
 {
 	int	i;
@@ -20,10 +21,10 @@ void	ft_putstr(char *str)
 		write(1, str + i, 1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	(void)(argc);
 	ft_putstr(argv[0]);
 	ft_putstr("\n");
-	return 0;
+	return (0);
 }
